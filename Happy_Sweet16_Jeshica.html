@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Sweet 16 Jeshica</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:linear-gradient(135deg,#dff6ff,#c7e9ff,#b5dcff);overflow-x:hidden;color:#234}
+.page{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:30px;text-align:center}
+h1{font-size:3rem;margin-bottom:15px}
+.card{background:rgba(255,255,255,.85);padding:25px;border-radius:25px;max-width:800px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.btn{display:inline-block;margin:10px;padding:12px 24px;border-radius:999px;background:#6ea8fe;color:#fff;text-decoration:none;border:none;cursor:pointer}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;width:100%;max-width:900px}
+.gallery img{width:100%;height:220px;object-fit:cover;border-radius:18px}
+.cloud{position:fixed;top:0;font-size:40px;animation:move 25s linear infinite}
+@keyframes move{from{transform:translateX(-120px)}to{transform:translateX(110vw)}}
+.balloon{position:fixed;bottom:-50px;animation:up 12s linear infinite;font-size:30px}
+@keyframes up{to{transform:translateY(-120vh)}}
+</style>
+</head>
+<body>
+
+<div class="cloud">☁️</div>
+<div class="balloon" style="left:10%">🎈</div>
+<div class="balloon" style="left:80%;animation-duration:15s">🎈</div>
+
+<section class="page">
+<div class="card">
+<h1>🎂 Happy Sweet 16 🎂</h1>
+<h2>Jeshica Herliana Putri</h2>
+<p>Ada kejutan spesial untukmu ✨</p><br>
+<button class="btn" onclick="openSite()">Buka Kejutan</button>
+<audio id="music" loop>
+<source src="musik.mp3" type="audio/mpeg">
+</audio>
+</div>
+</section>
+
+<section class="page" id="main">
+<div class="card">
+<h1>💙 Selamat Ulang Tahun</h1>
+<p>
+Selamat ulang tahun yang ke-16, Jeshica Herliana Putri.<br><br>
+Semoga di usia yang baru ini, setiap langkahmu dipenuhi kebahagiaan,
+kesehatan, dan keberanian untuk mengejar impian.
+Tetaplah menjadi pribadi yang baik, kuat, dan penuh semangat.
+✨ Happy Sweet Sixteen ✨
+</p>
+</div>
+</section>
+
+<section class="page">
+<h1>📸 Galeri Foto</h1>
+<div class="gallery">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+</div>
+<p style="margin-top:15px">Ganti foto1.jpg - foto4.jpg dengan fotomu sendiri.</p>
+</section>
+
+<section class="page">
+<div class="card">
+<h1>💌 Pesan Spesial</h1>
+<p>Hari ini adalah harimu. Tersenyumlah, rayakan setiap momen, dan nikmati semua kebahagiaan yang datang. Semoga semua impianmu tercapai.</p>
+</div>
+</section>
+
+<section class="page">
+<div class="card">
+<h1>🎉 Sweet 16 🎉</h1>
+<p>Made With ❤️ For Jeshica Herliana Putri</p>
+</div>
+</section>
+
+<script>
+function openSite(){
+ document.getElementById('music').play().catch(()=>{});
+ for(let i=0;i<80;i++){
+   let e=document.createElement('div');
+   e.innerHTML='🎉';
+   e.style.position='fixed';
+   e.style.left=Math.random()*100+'%';
+   e.style.top='-20px';
+   document.body.appendChild(e);
+   e.animate([{transform:'translateY(0)'},{transform:'translateY(100vh)'}],
+   {duration:3000+Math.random()*2000});
+ }
+ window.scrollTo({top:window.innerHeight,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
